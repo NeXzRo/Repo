@@ -28,6 +28,7 @@ jobs:
           LIST=$(jq -r '.[] | .RepoUrl as $url | ($url | sub("/$"; "") | sub(".git$"; "") | split("/") | .[-2] + "/" + .[-1]) as $repo | "* [**\(.Name)**](\($url)) `v\(.AssemblyVersion)` — \(.Punchline) ![Release](https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=orange)"' repo.json || echo "")
           
           if [ -z "$LIST" ]; then
+            echo "Liste leer"
             exit 1
           fi
 
@@ -38,7 +39,7 @@ jobs:
           
           filename = 'README.md'
           if not os.path.exists(filename):
-              sys.exit(1)
+              sys.exit(0)
           
           with open(filename, 'r', encoding='utf-8') as f:
               content = f.read()
@@ -52,11 +53,8 @@ jobs:
               pattern = re.compile(f'{start_m}.*?{end_m}', re.DOTALL)
               replacement = f'{start_m}\n{sys.stdin.read().strip()}\n{end_m}'
               new_content = pattern.sub(replacement, content)
-              
               with open(filename, 'w', encoding='utf-8') as f:
                   f.write(new_content)
-          else:
-              sys.exit(1)
           " "$COUNT" <<EOF
           $LIST
           EOF
