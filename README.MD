@@ -1,4 +1,4 @@
-# Repo [![Update Status](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml/badge.svg)](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml) ![Plugins](https://img.shields.io/badge/Plugins-2-blue?style=flat-square)
+# Repo [![Update Status](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml/badge.svg)](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml) ![Plugins](https://img.shields.io/badge/Plugins-3-blue?style=flat-square)
 
 
 ### Repo URL:
@@ -13,5 +13,9 @@ Paste the URL above into Dalamud → Settings → Experimental → Custom Plugin
 ## 📦 Available Plugins
 
 <!-- PLUGIN_LIST_START -->
+
+* [**Customize+**](https://github.com/NeXzRo/CustomizePlus) `v2.1.0.4` — Updated for 7.5 • by Kyara ![Release](https://img.shields.io/github/v/release/NeXzRo/CustomizePlus?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/NeXzRo/CustomizePlus/total?style=flat-square&label=Downloads&color=orange)
+* [**Better Targeting System**](https://github.com/NeXzRo/BetterTargetingSystem) `v0.15.3.4` — Updated (No PvP Check) • by Kyara ![Release](https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystem?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystem/total?style=flat-square&label=Downloads&color=orange)
+* [**SortaKinda**](https://github.com/NeXzRo/SortaKinda) `v2.2.0.3` — Updated for 7.5 • by Kyara ![Release](https://img.shields.io/github/v/release/NeXzRo/SortaKinda?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/NeXzRo/SortaKinda/total?style=flat-square&label=Downloads&color=orange)
 
 <!-- PLUGIN_LIST_END -->
