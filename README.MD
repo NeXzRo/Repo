@@ -11,3 +11,7 @@ https://nexzro.github.io/Repo/repo.json
 Paste the URL above into Dalamud → Settings → Experimental → Custom Plugin Repositories to access every plugin at once.
 
 ## 📦 Available Plugins
+
+<!-- PLUGIN_LIST_START -->
+
+<!-- PLUGIN_LIST_END -->
