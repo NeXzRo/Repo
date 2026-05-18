@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
@@ -31,6 +31,7 @@ jobs:
           LIST=$(jq -r '
             .[] |
             .RepoUrl as $url |
+
             (
               $url
               | sub("/$"; "")
@@ -42,29 +43,36 @@ jobs:
             "* [**\(.Name)**](\($url)) `v\(.AssemblyVersion)` — \(.Punchline) ![Release](https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=orange)"
           ' repo.json)
 
+          export COUNT
+          export LIST
+
           python3 <<EOF
+          import os
           import re
 
           with open("README.md", "r", encoding="utf-8") as f:
               content = f.read()
 
+          count = os.environ["COUNT"]
+          plugin_list = os.environ["LIST"]
+
           content = re.sub(
               r'badge/Plugins-\d+-blue',
-              f'badge/Plugins-${COUNT}-blue',
+              f'badge/Plugins-{count}-blue',
               content
           )
 
           start_marker = "<!-- PLUGIN_LIST_START -->"
           end_marker = "<!-- PLUGIN_LIST_END -->"
 
-          new_block = f"{start_marker}\n${LIST}\n{end_marker}"
+          new_section = f"{start_marker}\n\n{plugin_list}\n\n{end_marker}"
 
           pattern = re.compile(
               re.escape(start_marker) + r'.*?' + re.escape(end_marker),
               re.DOTALL
           )
 
-          content = pattern.sub(new_block, content)
+          content = pattern.sub(new_section, content)
 
           with open("README.md", "w", encoding="utf-8") as f:
               f.write(content)
@@ -86,4 +94,4 @@ jobs:
 
       - name: Push changes
         run: |
-          git push
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
