@@ -20,6 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Update README
@@ -67,5 +68,5 @@ jobs:
             echo "No changes"
           else
             git commit -m "docs: update plugin list"
-            git push
+            git push origin main
           fi
