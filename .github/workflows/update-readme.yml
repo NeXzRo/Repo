@@ -1,73 +1,97 @@
 name: Update Plugin List
+
 on:
-  push:
-    paths:
-      - 'repo.json'
   workflow_dispatch:
+
   schedule:
     - cron: '0 * * * *'
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  push:
+    paths:
+      - 'repo.json'
+
+permissions:
+  contents: write
 
 jobs:
   update-readme:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Update README
         run: |
           COUNT=$(jq '. | length' repo.json)
-          LIST=$(jq -r '.[] | .RepoUrl as $url | ($url | sub("/$"; "") | sub(".git$"; "") | split("/") | .[-2] + "/" + .[-1]) as $repo | "* [**\(.Name)**](\($url)) `v\(.AssemblyVersion)` — \(.Punchline) ![Release](https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=orange)"' repo.json || echo "")
-          
-          if [ -z "$LIST" ]; then
-            exit 1
-          fi
 
-          python3 -c "
-          import sys
+          LIST=$(jq -r '
+            .[] |
+            .RepoUrl as $url |
+
+            (
+              $url
+              | sub("/$"; "")
+              | sub("\\.git$"; "")
+              | split("/")
+              | .[-2] + "/" + .[-1]
+            ) as $repo |
+
+            "* [**\(.Name)**](\($url)) `v\(.AssemblyVersion)` — \(.Punchline) ![Release](https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=orange)"
+          ' repo.json)
+
+          export COUNT
+          export LIST
+
+          python3 <<EOF
           import os
           import re
-          
-          filename = 'README.md'
-          if not os.path.exists(filename):
-              sys.exit(1)
-          
-          with open(filename, 'r', encoding='utf-8') as f:
+
+          filename = "README.md"
+
+          with open(filename, "r", encoding="utf-8") as f:
               content = f.read()
-          
-          content = re.sub(r'badge/Plugins-\d+-blue', f'badge/Plugins-{sys.argv[1]}-blue', content)
-          
-          start_m = ''
-          end_m = ''
-          
-          if start_m in content and end_m in content:
-              pattern = re.compile(f'{start_m}.*?{end_m}', re.DOTALL)
-              replacement = f'{start_m}\n{sys.stdin.read().strip()}\n{end_m}'
-              new_content = pattern.sub(replacement, content)
-              with open(filename, 'w', encoding='utf-8') as f:
-                  f.write(new_content)
-          else:
-              sys.exit(1)
-          " "$COUNT" <<EOF
-          $LIST
+
+          count = os.environ["COUNT"]
+          plugin_list = os.environ["LIST"]
+
+          content = re.sub(
+              r'badge/Plugins-\d+-blue',
+              f'badge/Plugins-{count}-blue',
+              content
+          )
+
+          start_marker = "<!-- PLUGIN_LIST_START -->"
+          end_marker = "<!-- PLUGIN_LIST_END -->"
+
+          replacement = f"{start_marker}\n\n{plugin_list}\n\n{end_marker}"
+
+          pattern = re.compile(
+              re.escape(start_marker) + r'.*?' + re.escape(end_marker),
+              re.DOTALL
+          )
+
+          content = pattern.sub(replacement, content)
+
+          with open(filename, "w", encoding="utf-8") as f:
+              f.write(content)
           EOF
 
       - name: Commit and Push
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add README.md
-          if git diff --staged --quiet; then
+
+          if git diff --cached --quiet; then
             echo "No changes"
-          else
-            git commit -m "docs: update plugin list"
-            git push origin HEAD:main
+            exit 0
           fi
+
+          git commit -m "docs: update plugin list"
+
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
