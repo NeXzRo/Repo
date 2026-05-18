@@ -28,8 +28,7 @@ jobs:
           LIST=$(jq -r '.[] | .RepoUrl as $url | ($url | sub("/$"; "") | sub(".git$"; "") | split("/") | .[-2] + "/" + .[-1]) as $repo | "* [**\(.Name)**](\($url)) `v\(.AssemblyVersion)` — \(.Punchline) ![Release](https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue) ![Downloads](https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=orange)"' repo.json || echo "")
           
           if [ -z "$LIST" ]; then
-            echo "Liste leer"
-            exit 1
+            exit 0
           fi
 
           python3 -c "
