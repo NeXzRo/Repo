@@ -17,13 +17,17 @@ https://nexzro.github.io/Repo/repo.json
 
 <table>
 <tr>
-<th>Plugin</th>
-<th>Version</th>
-<th>Description</th>
-<th>Release</th>
-<th>Downloads</th>
+  <th align="left">Plugin</th>
+  <th align="center">Version</th>
+  <th align="center">Status</th>
+  <th align="center">Downloads</th>
 </tr>
-<tr><td><a href="https://github.com/NeXzRo/BetterTargetingSystemPvP"><b>Better Targeting System PvP</b></a></td><td>v7.5.0.2</td><td>Better Targeting without PvP restrictions</td><td><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystemPvP?style=flat-square&label=Latest&color=blue"></td><td><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystemPvP/total?style=flat-square&label=Downloads&color=purple"></td></tr>
+<tr>
+  <td><a href="https://github.com/NeXzRo/BetterTargetingSystemPvP"><b>Better Targeting System PvP</b></a></td>
+  <td align="center"><code>v7.5.0.2</code></td>
+  <td align="center"><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystemPvP?style=flat-square&label=Release&color=blue"></td>
+  <td align="center"><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystemPvP/total?style=flat-square&label=Downloads&color=purple"></td>
+</tr>
 </table>
 
 <!-- PLUGIN_LIST_END -->
