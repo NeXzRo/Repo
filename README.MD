@@ -1,4 +1,4 @@
-[![Update Status](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml/badge.svg)](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml) ![Plugins](https://img.shields.io/badge/Plugins-3-blue?style=flat-square)
+[![Update Status](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml/badge.svg)](https://github.com/NeXzRo/Repo/actions/workflows/update-readme.yml) ![Plugins](https://img.shields.io/badge/Plugins-1-blue?style=flat-square)
 
 
 ## Dalamud Repository URL
