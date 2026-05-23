@@ -21,7 +21,7 @@ Paste the URL into Dalamud → Settings → Experimental → Custom Plugin Repos
 <th>Release</th>
 <th>Downloads</th>
 </tr>
-<tr><td><a href="https://github.com/NeXzRo/BetterTargetingSystemPvP"><b>Better Targeting System PvP</b></a></td><td>v7.5.0.1</td><td>Better Targeting without PvP restrictions</td><td><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystemPvP?style=flat-square&label=Latest&color=blue"></td><td><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystemPvP/total?style=flat-square&label=Downloads&color=orange"></td></tr>
+<tr><td><a href="https://github.com/NeXzRo/BetterTargetingSystemPvP"><b>Better Targeting System PvP</b></a></td><td>v7.5.0.2</td><td>Better Targeting without PvP restrictions</td><td><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystemPvP?style=flat-square&label=Latest&color=blue"></td><td><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystemPvP/total?style=flat-square&label=Downloads&color=orange"></td></tr>
 </table>
 
 <!-- PLUGIN_LIST_END -->
