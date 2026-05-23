@@ -21,9 +21,7 @@ Paste the URL into Dalamud → Settings → Experimental → Custom Plugin Repos
 <th>Release</th>
 <th>Downloads</th>
 </tr>
-<tr><td><a href="https://github.com/NeXzRo/CustomizePlus"><b>Customize+</b></a></td><td>v2.1.0.4</td><td>Updated for 7.5 • by Kyara</td><td><img src="https://img.shields.io/github/v/release/NeXzRo/CustomizePlus?style=flat-square&label=Latest&color=blue"></td><td><img src="https://img.shields.io/github/downloads/NeXzRo/CustomizePlus/total?style=flat-square&label=Downloads&color=orange"></td></tr>
 <tr><td><a href="https://github.com/NeXzRo/BetterTargetingSystem"><b>Better Targeting System</b></a></td><td>v0.15.3.4</td><td>Updated (No PvP Check) • by Kyara</td><td><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystem?style=flat-square&label=Latest&color=blue"></td><td><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystem/total?style=flat-square&label=Downloads&color=orange"></td></tr>
-<tr><td><a href="https://github.com/NeXzRo/SortaKinda"><b>SortaKinda</b></a></td><td>v2.2.0.3</td><td>Updated for 7.5 • by Kyara</td><td><img src="https://img.shields.io/github/v/release/NeXzRo/SortaKinda?style=flat-square&label=Latest&color=blue"></td><td><img src="https://img.shields.io/github/downloads/NeXzRo/SortaKinda/total?style=flat-square&label=Downloads&color=orange"></td></tr>
 </table>
 
 <!-- PLUGIN_LIST_END -->
