@@ -1,36 +1,5 @@
 [
   {
-    "Author": "Risa and Contributors",
-    "Name": "Customize+",
-    "Description": "A plugin that allows you to customize your character beyond FFXIV limitations by directly editing bone parameters.",
-    "Punchline": "Updated for 7.5 • by Kyara",
-    "InternalName": "CustomizePlus",
-    "AssemblyVersion": "2.1.0.4",
-    "TestingAssemblyVersion": "2.1.0.4",
-    "RepoUrl": "https://github.com/NeXzRo/CustomizePlus",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 15,
-    "TestingDalamudApiLevel": 15,
-    "IsHide": true,
-    "IsTestingExclusive": false,
-    "DownloadCount": 0,
-    "LastUpdate": 0,
-    "LoadPriority": 0,
-    "DownloadLinkInstall": "https://github.com/NeXzRo/CustomizePlus/releases/download/api15/CustomizePlus.zip",
-    "DownloadLinkUpdate": "https://github.com/NeXzRo/CustomizePlus/releases/download/api15/CustomizePlus.zip",
-    "DownloadLinkTesting": "https://github.com/NeXzRo/CustomizePlus/releases/download/api15/CustomizePlus.zip",
-    "IconUrl": "https://raw.githubusercontent.com/NeXzRo/Stuff/main/CustomizePlus/icon.png",
-    "Tags": [
-      "Anamnesis",
-      "Customization",
-      "Appearance",
-      "Character",
-      "Kyara",
-      "Rara",
-      "NeXzRo"
-    ]
-  },
-  {
     "Author": "Lynesth, maintained by Khayle",
     "Name": "Better Targeting System",
     "Description": "A more intelligent targeting system for the game which also includes new keybinds.",
@@ -38,7 +7,7 @@
     "InternalName": "BetterTargetingSystemPvP",
     "AssemblyVersion": "0.15.3.4",
     "TestingAssemblyVersion": "0.15.3.4",
-    "RepoUrl": "https://github.com/NeXzRo/BetterTargetingSystem",
+    "RepoUrl": "https://github.com/NeXzRo/BetterTargetingSystemPvP",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 15,
     "TestingDalamudApiLevel": 15,
@@ -47,9 +16,9 @@
     "DownloadCount": 0,
     "LastUpdate": 0,
     "LoadPriority": 0,
-    "DownloadLinkInstall": "https://github.com/NeXzRo/BetterTargetingSystem/releases/download/api15/BetterTargetingSystem.zip",
-    "DownloadLinkUpdate": "https://github.com/NeXzRo/BetterTargetingSystem/releases/download/api15/BetterTargetingSystem.zip",
-    "DownloadLinkTesting": "https://github.com/NeXzRo/BetterTargetingSystem/releases/download/api15/BetterTargetingSystem.zip",
+    "DownloadLinkInstall": "https://github.com/NeXzRo/BetterTargetingSystemPvP/releases/download/api15/BetterTargetingSystemPvP.zip",
+    "DownloadLinkUpdate": "https://github.com/NeXzRo/BetterTargetingSystemPvP/releases/download/api15/BetterTargetingSystemPvP.zip",
+    "DownloadLinkTesting": "https://github.com/NeXzRo/BetterTargetingSystemPvP/releases/download/api15/BetterTargetingSystemPvP.zip",
     "IconUrl": "https://raw.githubusercontent.com/NeXzRo/Stuff/main/BetterTargetingSystemPvP/icon.png",
     "Tags": [
       "Targeting",
@@ -61,34 +30,4 @@
       "NeXzRo"
     ]
   },
-  {
-    "Author": "MidoriKami",
-    "Name": "SortaKinda",
-    "Description": "Sort your inventory however you want and keep it sorted.",
-    "Punchline": "Updated for 7.5 • by Kyara",
-    "InternalName": "sortakinda2",
-    "AssemblyVersion": "2.2.0.3",
-    "TestingAssemblyVersion": "2.2.0.3",
-    "RepoUrl": "https://github.com/NeXzRo/SortaKinda",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 15,
-    "TestingDalamudApiLevel": 15,
-    "IsHide": false,
-    "IsTestingExclusive": false,
-    "DownloadCount": 0,
-    "LastUpdate": 0,
-    "LoadPriority": 0,
-    "DownloadLinkInstall": "https://github.com/NeXzRo/SortaKinda/releases/download/api15/SortaKinda.zip",
-    "DownloadLinkUpdate": "https://github.com/NeXzRo/SortaKinda/releases/download/api15/SortaKinda.zip",
-    "DownloadLinkTesting": "https://github.com/NeXzRo/SortaKinda/releases/download/api15/SortaKinda.zip",
-    "IconUrl": "https://raw.githubusercontent.com/NeXzRo/Stuff/main/SortaKinda/icon.png",
-    "Tags": [
-      "Inventory",
-      "Sorting",
-      "System",
-      "Kyara",
-      "Rara",
-      "NeXzRo"
-    ]
-  }
 ]
