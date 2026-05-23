@@ -40,7 +40,7 @@ jobs:
               | .[-2] + "/" + .[-1]
             ) as $repo |
 
-            "<tr><td><a href=\"\($url)\"><b>\(.Name)</b></a></td><td>v\(.AssemblyVersion)</td><td>\(.Punchline)</td><td><img src=\"https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue\"></td><td><img src=\"https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=orange\"></td></tr>"
+            "<tr><td><a href=\"\($url)\"><b>\(.Name)</b></a></td><td>v\(.AssemblyVersion)</td><td>\(.Punchline)</td><td><img src=\"https://img.shields.io/github/v/release/\($repo)?style=flat-square&label=Latest&color=blue\"></td><td><img src=\"https://img.shields.io/github/downloads/\($repo)/total?style=flat-square&label=Downloads&color=purple\"></td></tr>"
           ' repo.json)
 
           export COUNT
