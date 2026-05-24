@@ -64,7 +64,7 @@ jobs:
 
           new_table = "<table>\n<tr>\n<th align=\"left\">Plugin</th>\n<th align=\"left\">Description</th>\n<th align=\"center\">Version</th>\n<th align=\"center\">Downloads</th>\n</tr>\n" + plugin_list + "</table>"
 
-          pattern = re.compile(f"{re.escape(start_marker)}.*?{re.escape(end_marker)}", re.DOTALL)
+          pattern = re.compile(f"{re.escape(start_marker)}[\\s\\S]*?{re.escape(end_marker)}")
           
           if start_marker in content and end_marker in content:
               content = pattern.sub(f"{start_marker}\n{new_table}\n{end_marker}", content)
