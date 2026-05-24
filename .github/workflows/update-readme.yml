@@ -67,7 +67,7 @@ jobs:
           start_marker = ""
           end_marker = ""
 
-          table = f"""
+          new_table = f"""
           <table>
           <tr>
           <th align="left">Plugin</th>
@@ -76,17 +76,19 @@ jobs:
           <th align="center">Downloads</th>
           </tr>
           {plugin_list}
-          </table>
-          """
+          </table>"""
 
-          replacement = f"{start_marker}\n{table}\n{end_marker}"
+          replacement = f"{start_marker}\n{new_table}\n{end_marker}"
 
           pattern = re.compile(
               re.escape(start_marker) + r'.*?' + re.escape(end_marker),
               re.DOTALL
           )
 
-          content = pattern.sub(replacement, content)
+          if start_marker in content and end_marker in content:
+              content = pattern.sub(replacement, content)
+          else:
+              content += f"\n{start_marker}\n{new_table}\n{end_marker}"
 
           with open(filename, "w", encoding="utf-8") as f:
               f.write(content)
@@ -98,7 +100,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           if git diff --cached --quiet; then
-            echo "No changes"
             exit 0
           fi
           git commit -m "docs: update plugin list"
