@@ -66,18 +66,22 @@ jobs:
               content
           )
 
-          start_marker = "<table>"
-          end_marker = "</table>"
+          start_marker = "<!-- PLUGIN_LIST_START -->"
+          end_marker = "<!-- PLUGIN_LIST_END -->"
 
-          new_table = f"""<table>
+          new_table = f"""{start_marker}
+
+          <table>
           <tr>
-          <th align="left">Plugin</th>
-          <th align="left">Description</th>
-          <th align="center">Version</th>
-          <th align="center">Downloads</th>
+            <th align="left">Plugin</th>
+            <th align="left">Description</th>
+            <th align="center">Version</th>
+            <th align="center">Downloads</th>
           </tr>
           {plugin_list}
-          </table>"""
+          </table>
+
+          {end_marker}"""
 
           pattern = re.compile(
               re.escape(start_marker) + r'[\s\S]*?' + re.escape(end_marker),
