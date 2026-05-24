@@ -46,49 +46,30 @@ jobs:
           export COUNT
           export LIST
 
-          python3 <<EOF
+          python3 <<'EOF'
           import os
           import re
 
           filename = "README.md"
-
           with open(filename, "r", encoding="utf-8") as f:
               content = f.read()
 
           count = os.environ["COUNT"]
           plugin_list = os.environ["LIST"]
 
-          content = re.sub(
-              r'badge/Plugins-\d+-blue',
-              f'badge/Plugins-{count}-blue',
-              content
-          )
+          content = re.sub(r'badge/Plugins-\d+-blue', f'badge/Plugins-{count}-blue', content)
 
           start_marker = ""
           end_marker = ""
 
-          new_table = f"""
-          <table>
-          <tr>
-          <th align="left">Plugin</th>
-          <th align="left">Description</th>
-          <th align="center">Version</th>
-          <th align="center">Downloads</th>
-          </tr>
-          {plugin_list}
-          </table>"""
+          new_table = "<table>\n<tr>\n<th align=\"left\">Plugin</th>\n<th align=\"left\">Description</th>\n<th align=\"center\">Version</th>\n<th align=\"center\">Downloads</th>\n</tr>\n" + plugin_list + "</table>"
 
-          replacement = f"{start_marker}\n{new_table}\n{end_marker}"
-
-          pattern = re.compile(
-              re.escape(start_marker) + r'.*?' + re.escape(end_marker),
-              re.DOTALL
-          )
-
+          pattern = re.compile(f"{re.escape(start_marker)}.*?{re.escape(end_marker)}", re.DOTALL)
+          
           if start_marker in content and end_marker in content:
-              content = pattern.sub(replacement, content)
+              content = pattern.sub(f"{start_marker}\n{new_table}\n{end_marker}", content)
           else:
-              content += f"\n{start_marker}\n{new_table}\n{end_marker}"
+              content = content.rstrip() + f"\n\n{start_marker}\n{new_table}\n{end_marker}\n"
 
           with open(filename, "w", encoding="utf-8") as f:
               f.write(content)
