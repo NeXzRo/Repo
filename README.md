@@ -23,11 +23,11 @@ https://nexzro.github.io/Repo/repo.json
   <th align="center">Downloads</th>
 </tr>
 <tr>
-  <td><a href="https://github.com/NeXzRo/BetterTargetingSystemPvP"><b>Better Targeting System PvP</b></a></td>
-  <td>A specialized fork of the Better Targeting System, optimized for unrestricted use in all game modes including PvP.</td>
-  <td align="center"><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystemPvP?style=flat-square&label=&color=blue"></td>
-  <td align="center"><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystemPvP/total?style=flat-square&label=Downloads&color=purple"></td>
-</tr>
+    <td><a href="https://github.com/NeXzRo/BetterTargetingSystemPvP"><b>Better Targeting System PvP</b></a></td>
+    <td>A fork of the original Better Targeting System that removes the PvP check, allowing the plugin to function in all game modes</td>
+    <td align="center"><img src="https://img.shields.io/github/v/release/NeXzRo/BetterTargetingSystemPvP?style=flat-square&label=&color=blue"></td>
+    <td align="center"><img src="https://img.shields.io/github/downloads/NeXzRo/BetterTargetingSystemPvP/total?style=flat-square&label=Downloads&color=purple"></td>
+  </tr>
 </table>
 
 <!-- PLUGIN_LIST_END -->
