@@ -11,7 +11,7 @@ https://nexzro.github.io/Repo/repo.json
 2. Under **Custom Plugin Repositories**, paste the URL above, tick **Enabled**, click **+**, then **Save and Close**.
 3. Open `/xlplugins` → **All Plugins** and search for any of the plugins listed below.
 
-## 📦 Available Plugins
+## <img src="https://raw.githubusercontent.com/NeXzRo/Stuff/main/Repo.png" width="20"> Available Plugins
 
 <!-- PLUGIN_LIST_START -->
 
