@@ -14,6 +14,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -52,42 +53,65 @@ jobs:
           import sys
 
           filename = "README.md"
+
           with open(filename, "r", encoding="utf-8") as f:
               content = f.read()
 
           count = os.environ["COUNT"]
           plugin_list = os.environ["LIST"]
 
-          content = re.sub(r'badge/Plugins-\d+-blue', f'badge/Plugins-{count}-blue', content)
+          content = re.sub(
+              r'badge/Plugins-\d+-blue',
+              f'badge/Plugins-{count}-blue',
+              content
+          )
 
-          start_marker = ""
-          end_marker = ""
+          start_marker = "<table>"
+          end_marker = "</table>"
 
-          new_table = "<table>\n<tr>\n<th align=\"left\">Plugin</th>\n<th align=\"left\">Description</th>\n<th align=\"center\">Version</th>\n<th align=\"center\">Downloads</th>\n</tr>\n" + plugin_list + "</table>"
-          full_block = f"{start_marker}\n{new_table}\n{end_marker}"
+          new_table = f"""<table>
+          <tr>
+          <th align="left">Plugin</th>
+          <th align="left">Description</th>
+          <th align="center">Version</th>
+          <th align="center">Downloads</th>
+          </tr>
+          {plugin_list}
+          </table>"""
 
-          pattern = re.compile(f"{re.escape(start_marker)}[\\s\\S]*?{re.escape(end_marker)}")
-          
+          pattern = re.compile(
+              re.escape(start_marker) + r'[\s\S]*?' + re.escape(end_marker),
+              re.MULTILINE
+          )
+
           match = pattern.search(content)
-          if match and match.group(0) == full_block:
+
+          if match:
+              updated = pattern.sub(new_table, content, count=1)
+          else:
+              updated = content.rstrip() + "\n\n" + new_table + "\n"
+
+          if updated == content:
+              print("No changes detected.")
               sys.exit(0)
 
-          if start_marker in content and end_marker in content:
-              content = pattern.sub(full_block, content)
-          else:
-              content = content.rstrip() + f"\n\n{full_block}\n"
-
           with open(filename, "w", encoding="utf-8") as f:
-              f.write(content)
+              f.write(updated)
+
+          print("README updated.")
           EOF
 
       - name: Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add README.md
+
           if git diff --cached --quiet; then
+            echo "No changes to commit."
             exit 0
           fi
-          git commit -m "docs: update plugin list"
+
+          git commit -m "docs: update plugin list [skip ci]"
           git push origin HEAD:${GITHUB_REF#refs/heads/}
