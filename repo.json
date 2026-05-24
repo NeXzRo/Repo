@@ -3,18 +3,18 @@
     "Author": "Kyara (Fork of original by Lynesth)",
     "Name": "Better Targeting System PvP",
     "Description": "A fork of the original Better Targeting System that removes the PvP check, allowing the plugin to function in all game modes",
-    "Changelog": "Minor UI cleanup: removed leftover PvP warning.",
+    "Changelog": "",
     "Punchline": "Better Targeting without PvP restrictions",
     "InternalName": "BetterTargetingSystemPvP",
-    "AssemblyVersion": "7.5.0.2",
-    "TestingAssemblyVersion": "7.5.0.2",
+    "AssemblyVersion": "7.5.0.3",
+    "TestingAssemblyVersion": "7.5.0.3",
     "RepoUrl": "https://github.com/NeXzRo/BetterTargetingSystemPvP",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 15,
     "TestingDalamudApiLevel": 15,
     "IsHide": false,
     "IsTestingExclusive": false,
-    "DownloadCount": 7,
+    "DownloadCount": 9,
     "LoadPriority": 0,
     "DownloadLinkInstall": "https://github.com/NeXzRo/BetterTargetingSystemPvP/releases/latest/download/latest.zip",
     "DownloadLinkUpdate": "https://github.com/NeXzRo/BetterTargetingSystemPvP/releases/latest/download/latest.zip",
@@ -29,6 +29,6 @@
       "Rara",
       "NeXzRo"
     ],
-    "LastUpdate": 1779579238
+    "LastUpdate": 1779583025
   }
 ]
