@@ -6,8 +6,8 @@
     "Changelog": "",
     "Punchline": "Better Targeting without PvP restrictions",
     "InternalName": "BetterTargetingSystemPvP",
-    "AssemblyVersion": "7.5.0.3",
-    "TestingAssemblyVersion": "7.5.0.3",
+    "AssemblyVersion": "7.5.0.4",
+    "TestingAssemblyVersion": "7.5.0.4",
     "RepoUrl": "https://github.com/NeXzRo/BetterTargetingSystemPvP",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 15,
@@ -29,6 +29,6 @@
       "Rara",
       "NeXzRo"
     ],
-    "LastUpdate": 1779583025
+    "LastUpdate": 1779681142
   }
 ]
