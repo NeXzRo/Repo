@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "owner": "NeXzRo",
+      "repo": "BetterTargetingSystemPvP",
+      "branch": "main",
+      "internalName": "BetterTargetingSystemPvP"
+    }
+  ]
+}
