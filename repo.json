@@ -37,8 +37,8 @@
     "Description": "This plugin shows the destination zone's concept art while loading.\nNOTE: ONLY LOOKS RIGHT ON 16:9 SCREENS! The concept art is not any bigger, and we can't expand/fix it. Sorry!",
     "Punchline": "Shows the destination zone's concept art while loading",
     "InternalName": "Dalamud.LoadingImage2",
-    "AssemblyVersion": "1.0.0.21",
-    "TestingAssemblyVersion": "1.0.0.21",
+    "AssemblyVersion": "1.0.0.22",
+    "TestingAssemblyVersion": "1.0.0.22",
     "RepoUrl": "https://github.com/NeXzRo/Dalamud.LoadingImage",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 15,
@@ -50,6 +50,6 @@
     "DownloadLinkInstall": "https://github.com/NeXzRo/Dalamud.LoadingImage/releases/latest/download/latest.zip",
     "DownloadLinkUpdate": "https://github.com/NeXzRo/Dalamud.LoadingImage/releases/latest/download/latest.zip",
     "DownloadLinkTesting": "https://github.com/NeXzRo/Dalamud.LoadingImage/releases/latest/download/latest.zip",
-    "LastUpdate": 1779686659
+    "LastUpdate": 1779687288
   }
 ]
