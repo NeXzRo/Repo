@@ -5,6 +5,12 @@
       "repo": "BetterTargetingSystemPvP",
       "branch": "main",
       "internalName": "BetterTargetingSystemPvP"
+    },
+    {
+      "owner": "NeXzRo",
+      "repo": "Dalamud.LoadingImage",
+      "branch": "main",
+      "internalName": "Dalamud.LoadingImage"
     }
   ]
 }
